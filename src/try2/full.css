@@ -1,11 +1,11 @@
 .container{
     display: flex;
-    
+    height: 550px;
     flex-direction: row;
 }
 
 .item{
-    
+    height: 100%;
     width:500px;
     background: cyan;
 }

@@ -13,15 +13,76 @@
 
 .popup-content{
     position: relative;
-    width:50%;
-    max-width: 600px;
+    width:400px;
     background: white;
-    height: 300px;
-    border-radius: 3px;
+    height: 260px;
+    border-radius: 16px;
     padding: 20px;
+    color: black;
 }
 
-.popup-content > button{
+.popup-content > .close-btn{
     position: absolute;
     right: 20px;
+    top: 20px;
+}
+
+.close-btn{
+    background: url('../images/Close.png');
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 17px;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+.contact-heading{
+    font: var(--unnamed-font-style-normal) normal bold 42px/47px Banana Grotesk;
+    text-align: left;
+    letter-spacing: 2.1px;
+    color: #495057;
+    font: normal normal bold  Banana Grotesk;
+    top: 20px;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p{
+    color: #ADB5BD;
+    letter-spacing: 0.48px;
+}
+
+form>label,input{
+    color: #495057;
+}
+
+.icon{   
+    width: 10px;
+    height: 11px;
+    position: relative;
+    float: right;
+    position: relative;
+    margin: 5px;
+}
+
+.facebook{
+    background: url('../images/FB-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.twitter{
+    background: url('../images/Twitter-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.linkedin{
+    background: url('../images/linkedin-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.icon:hover{
+    cursor: pointer;
 }

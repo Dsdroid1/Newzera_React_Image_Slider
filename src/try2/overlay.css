@@ -5,3 +5,73 @@
 .nav-pop:hover{
     cursor: pointer;
 }
+
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 180px;
+    position: absolute;
+}
+
+.navbar>li{
+    display: inline;
+    padding: 10px;
+    font-size: 12px;
+}
+
+*{
+    color: white;
+    
+}
+
+.text-heading{
+    position: relative;
+    top: 360px;
+    font-size:15px;
+    font-weight: bold;
+}
+
+.text-content{
+    position: relative;
+    top: 10px;
+    font-size:12px;
+    font-weight: normal;
+    max-width: 150px;
+    letter-spacing: -0.11px;
+    margin-bottom: 10px;
+}
+
+.bottom-icons{
+    position: relative;
+    top: 440px;
+    left: 320px;
+}
+
+.icon{
+   
+    width: 10px;
+    height: 11px;
+    float: left;
+    position: relative;
+    margin: 5px;
+}
+
+.facebook{
+    background: url('../images/FB-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.twitter{
+    background: url('../images/Twitter-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.linkedin{
+    background: url('../images/linkedin-icon-black.png');
+    background-repeat: no-repeat;
+}
+
+.icon:hover{
+    cursor: pointer;
+}

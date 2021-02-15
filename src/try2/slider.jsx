@@ -19,10 +19,19 @@ function Slider(){
                 
                 </div>
                 <div className='overlay_data'>
-                    <div>Hello There,general Kenobi</div>
                     <Overlay/>
+                    
                 </div>
-                 
+                <div className='progress'>
+                    {
+                    [...Array(2)].map((e,i)=>  {
+                        if(i===index)
+                            return <span className='dotfill' key={i}></span>
+                        else
+                            return <span className='dot' key={i}></span>
+                    })
+                    }
+                    </div>
             </div>
             
             <button onClick={ () => setIndex(index===1?0:1)}>Next</button>

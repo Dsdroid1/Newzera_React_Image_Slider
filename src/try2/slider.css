@@ -1,6 +1,7 @@
 .slider-container{
     position: relative;
-    height: 500px;
+    /*height: 500px;*/
+    height: 100%;
     width: 500px;
     border: 5px solid red;
     overflow: hidden;
@@ -15,19 +16,19 @@
 }
 
 .image_cont{
-    height: 500px;
+    height: 100%;
     width:500px;
     
 }
 
 .img1{
-    background: url('../images/img1.jpeg');
+    background: url('../images/dog1.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 .img2{
-    background: url('../images/img2.jpeg');
+    background: url('../images/dog2.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -45,4 +46,34 @@
     color: yellowgreen;
     z-index:1;
     opacity: 1;
+}
+
+.dotfill{
+    border-radius: 50%;
+    background-color: white;
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    
+}
+
+.dot{
+    background-color: grey;
+    height: 5px;
+    width: 5px;
+    border: 1px solid #FEE7DE;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.progress{
+    position: absolute;
+    bottom: 80px;
+    left: 100px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+    gap:5px;
 }
