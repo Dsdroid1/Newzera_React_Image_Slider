@@ -1,0 +1,55 @@
+.slider{
+    height: 500px;
+    width: 500px;
+}
+
+.inactive{
+    opacity:0;
+    transition-duration: 1s ;
+    /*height: 0px;*/
+    width: 0px;
+    /*transform:scale(1.08);*/
+}
+
+.active{
+    transition-duration: 3s ease;   
+    width: 500px;
+}
+
+.btn-slider{
+    text-align:center;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dotfill{
+    border-radius: 50%;
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+
+.dot{
+    border-radius: 50%;
+    background-color: grey;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+
+.progress{
+    display: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.slider-cont{
+    top: 100px;
+    left: 100px;
+    display: absolute;   
+}

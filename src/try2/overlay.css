@@ -1,0 +1,7 @@
+.nav-pop{
+    display:block;
+}
+
+.nav-pop:hover{
+    cursor: pointer;
+}
