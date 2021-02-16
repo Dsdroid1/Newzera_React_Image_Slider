@@ -59,12 +59,11 @@ form>label,input{
     color: #495057;
 }
 
-.icon{   
+.icons{   
     width: 10px;
     height: 11px;
     position: relative;
     float: right;
-    position: relative;
     margin: 5px;
 }
 
@@ -83,6 +82,20 @@ form>label,input{
     background-repeat: no-repeat;
 }
 
-.icon:hover{
+.icons:hover{
+    cursor: pointer;
+}
+
+input[type=submit]{
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    width: 80px;
+    padding-left : 18px;
+    padding-right: 18px;
+    padding-top:12px;
+    padding-bottom: 12px;
+    font-size: 12px;
+    color: white;
     cursor: pointer;
 }
