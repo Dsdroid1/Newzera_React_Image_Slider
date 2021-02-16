@@ -21,9 +21,10 @@ function Overlay() {
         </div>
 
         <div className='bottom-icons'>
-            <a href='https://www.facebook.com/'><div className='facebook icon'></div></a>
-            <a href='https://www.linkedin.com/feed/'><div className='linkedin icon'></div></a>
+            
             <a href='https://twitter.com/?lang=en'><div className='twitter icon'></div></a>
+            <a href='https://www.linkedin.com/feed/'><div className='linkedin icon'></div></a>
+            <a href='https://www.facebook.com/'><div className='facebook icon'></div></a>
         </div>
         
         <Popup active={popupOn} closePopup={setPopupon}/>

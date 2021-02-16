@@ -10,12 +10,13 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    left: 180px;
+    left: 330px;
+    float: right;
     position: absolute;
 }
 
 .navbar>li{
-    display: inline;
+    display:inline;
     padding: 10px;
     font-size: 12px;
 }
@@ -44,15 +45,15 @@
 
 .bottom-icons{
     position: relative;
-    top: 440px;
-    left: 320px;
+    top: 460px;
+    left: 350px;
 }
 
 .icon{
    
     width: 10px;
     height: 11px;
-    float: left;
+    float: right;
     position: relative;
     margin: 5px;
 }

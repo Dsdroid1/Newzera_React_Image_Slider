@@ -50,10 +50,10 @@ function Slider(){
                     }
                     </div>
             </div>
-            
+            {/* 
             <button onClick={ () => setIndex(index===1?0:1)}>Next</button>
             <p>Current Image {index}</p>
-            
+            */}
         </React.Fragment>
     );
 }
