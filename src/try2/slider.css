@@ -3,7 +3,7 @@
     /*height: 500px;*/
     height: 100%;
     width: 100%;
-    max-width:500px;
+    /*max-width:500px;*/
     /*border: 5px solid red;*/
     overflow: hidden;
 }
@@ -11,14 +11,14 @@
 .slider-flex{
     display: flex;
     height: 100%;
-    width: 1000px;
+    width: 200%;
     /*transform: translateX(-500px);
     transition: transform ease-out 1s;*/
 }
 
 .image_cont{
     height: 100%;
-    width:500px;
+    width:50%;
     
 }
 

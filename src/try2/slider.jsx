@@ -3,12 +3,12 @@ import './slider.css';
 import Overlay from './overlay';
 function Slider(){
     const [index,setIndex] = useState(0);
-    let x_displace = -index*500
+    let x_displace = -index*50
     const styles= {
-        transform: `translate(${x_displace}px, 0px)` ,
+        transform: `translate(${x_displace}%, 0px)` ,
         transition: `transform ease-out 1s`
     }
-    const autoplayref = useRef()
+    const autoplayref = useRef();
 
     useEffect(() => {
         autoplayref.current=()=>{
@@ -18,7 +18,7 @@ function Slider(){
     
     useEffect(() => {
         const play = () => {
-          autoplayref.current()
+            return autoplayref.current()
         }
     
         const interval = setInterval(play, 10 * 1000)
