@@ -21,6 +21,10 @@
     font-size: 12px;
 }
 
+.navbar>li>a{
+    text-decoration: none;
+}
+
 *{
     color: white;
     

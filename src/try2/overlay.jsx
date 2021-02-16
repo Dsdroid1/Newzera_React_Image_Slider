@@ -7,9 +7,9 @@ function Overlay() {
         <React.Fragment>
         
         <ul className='navbar'>
-            <li>About</li>
-            <li>Blog</li>
-            <li>Careers</li>
+            <li><a href=''>About</a></li>
+            <li><a href=''>Blog</a></li>
+            <li><a href=''>Careers</a></li>
             <li className='nav-pop' onClick={()=>setPopupon(true)}>Contact</li>
         </ul>
         
