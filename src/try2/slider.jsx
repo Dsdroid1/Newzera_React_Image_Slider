@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import './slider.css';
 import Overlay from './overlay';
 function Slider(){
@@ -8,7 +8,24 @@ function Slider(){
         transform: `translate(${x_displace}px, 0px)` ,
         transition: `transform ease-out 1s`
     }
+    const autoplayref = useRef()
+
+    useEffect(() => {
+        autoplayref.current=()=>{
+            return setIndex(index===1?0:1)
+        }
+    })
     
+    useEffect(() => {
+        const play = () => {
+          autoplayref.current()
+        }
+    
+        const interval = setInterval(play, 10 * 1000)
+        return () => clearInterval(interval)
+      }, [])
+
+
     return (
         <React.Fragment>
             <div className='slider-container'>
