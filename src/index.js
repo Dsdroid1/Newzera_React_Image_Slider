@@ -7,8 +7,27 @@ import reportWebVitals from './reportWebVitals';
 //import Slider from './try2/slider';
 import Sample from './try2/full';
 
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache
+} from '@apollo/client';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:4000'
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+});
+
+
 ReactDOM.render(
-  <Sample />,
+  <ApolloProvider client={client}>
+  <Sample />
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
