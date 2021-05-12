@@ -8,6 +8,10 @@ class Sample extends Component {
   render() {
     return (
       <div className='container'>
+        {/* Container is a flex container, which will display the 2 parts of our application,
+            The left part containing text and app download links,
+            and the right part,having the image slider and nav bars.
+        */}
         <div className='item'>
           <Left />
         </div>

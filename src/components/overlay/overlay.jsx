@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import Popup from '../popup/popup';
 import './overlay.css';
+
 function Overlay() {
+  //NOTE: NOT RESPONSIVE YET
+  //This component is the navbar and content which exists in the app over our image slider
+  //The elements here are placed via relative positioning and using top and left,
+  //Therefore, this works well on a laptop like screen, but fails for a mobile device.
+  //To make responsive, use better CSS and positioning of elements.
+  //Position : Absolute->Absolute positioning based on rendering window.
+  //Position : Relative->Relative to the component in which it is placed.
   const [popupOn, setPopupon] = useState(false);
+  //React state hook to control the popup for Contact in the navbar
   return (
     <React.Fragment>
       <ul className='navbar'>

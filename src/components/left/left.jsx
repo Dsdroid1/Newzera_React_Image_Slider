@@ -9,10 +9,13 @@ const TEXT_QUERY = gql`
 `;
 
 function Left() {
+  //Most data rendered in this component is placed via top and left positions via CSS
+  //Rest all is simple element rendering
+
   const { loading, error, data } = useQuery(TEXT_QUERY);
   if (loading) return 'loading...';
   if (error) return 'Error!';
-  console.log(data);
+  //console.log(data);
   return (
     <React.Fragment>
       <div className='left-container'>
@@ -21,6 +24,7 @@ function Left() {
           {/* Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. */}
           {data && <>{data.getData}</>}
+          {/* If data is available, i.e. fetched from the query, then display it here*/}
         </div>
         <div className='left-content'>
           Lorem Ipsum has been the industry's standard dummy text ever since the

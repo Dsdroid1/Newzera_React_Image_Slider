@@ -9,12 +9,14 @@ const SEND_MESSAGE_MUTATION = gql`
     }
   }
 `;
+//Above is the GraphQL query to send the message to our database
 
 function Popup(props) {
   const [formState, setFormState] = useState({
     msg: '',
     url: ''
   });
+  //To keep track of the values in the form, we use the useState hook.
 
   const [sendMessage, { error }] = useMutation(SEND_MESSAGE_MUTATION, {
     variables: {
@@ -22,6 +24,7 @@ function Popup(props) {
       email: formState.email
     }
   });
+  //Get the function to perform the mutation, as well as error, if it occured during mutation
 
   if (error)
     return (
@@ -36,8 +39,10 @@ function Popup(props) {
       </div>
     );
 
-  return props.active ? (
+  return props.active ? ( //props.active check tells us whether we should render our Popup or not.
     <div className='popup-container'>
+      {/*This is a container with absolute positioning, and it has its background transparency lowered
+        so that it looks like the popup is the only active window.*/}
       <div className='popup-content'>
         <div
           className='close-btn'
@@ -48,7 +53,9 @@ function Popup(props) {
         <form
           onSubmit={e => {
             e.preventDefault();
+            //Include a validate function here, to verify the form data
             sendMessage();
+            //Call the mutation to send data
             props.closePopup(false);
           }}
         >
