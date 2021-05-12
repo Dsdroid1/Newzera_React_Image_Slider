@@ -5,7 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 //import TextSlider from './components/textSlider';
 //import Slider from './try2/slider';
-import Sample from './try2/full';
+import Sample from './components/full/full';
 
 import {
   ApolloProvider,
@@ -23,10 +23,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-
 ReactDOM.render(
   <ApolloProvider client={client}>
-  <Sample />
+    <Sample />
   </ApolloProvider>,
   document.getElementById('root')
 );

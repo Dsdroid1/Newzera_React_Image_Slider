@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './slider.css';
-import Overlay from './overlay';
+import Overlay from '../overlay/overlay';
 function Slider() {
   const [index, setIndex] = useState(0);
   let x_displace = -index * 50;

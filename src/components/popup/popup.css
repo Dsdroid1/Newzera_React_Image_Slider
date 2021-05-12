@@ -1,0 +1,140 @@
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  position: relative;
+  width: 350px;
+  background: #fcebe5;
+  height: 260px;
+  border-radius: 16px;
+  padding: 20px;
+  color: black;
+}
+
+.popup-content > .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.close-btn {
+  background: url('../../images/Close.png');
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+.contact-heading {
+  font: var(--unnamed-font-style-normal) normal bold 42px/47px Banana Grotesk;
+  text-align: left;
+  letter-spacing: 2.1px;
+  color: #495057;
+
+  top: 20px;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p {
+  color: #adb5bd;
+  letter-spacing: 0.48px;
+  font-size: 12px;
+  top: 7px;
+  position: relative;
+}
+form {
+  top: 15px;
+  position: relative;
+}
+
+form > label,
+input {
+  color: #495057;
+}
+
+.icons {
+  width: 10px;
+  height: 11px;
+  position: relative;
+  float: right;
+  margin: 5px;
+  bottom: 5px;
+  top: 15px;
+}
+
+.facebook {
+  background: url('../../images/FB-icon-black.png');
+  background-repeat: no-repeat;
+}
+
+.twitter {
+  background: url('../../images/Twitter-icon-black.png');
+  background-repeat: no-repeat;
+}
+
+.linkedin {
+  background: url('../../images/linkedin-icon-black.png');
+  background-repeat: no-repeat;
+}
+
+.icons:hover {
+  cursor: pointer;
+}
+
+input[type='submit'] {
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  width: 80px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.form-field > input {
+  border: none;
+  background-color: #f8f9fa;
+  margin: 5px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.form-field {
+  background-color: #f8f9fa;
+  height: 40px;
+  border-radius: 30px;
+  width: 100%;
+  margin: 5px;
+  display: flex;
+}
+
+.form-field > label {
+  color: #495057;
+  font-size: 12px;
+  margin-left: 20px;
+  padding: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  width: 50px;
+}
