@@ -19,54 +19,69 @@ function Popup(props) {
   //To keep track of the values in the form, we use the useState hook.
 
   const [dataValid, setDataValid] = useState(true);
+  //For form validation, to display error message
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const [sendMessage, { error }] = useMutation(SEND_MESSAGE_MUTATION, {
+  const [sendMessage] = useMutation(SEND_MESSAGE_MUTATION, {
     variables: {
       msg: formState.msg,
       email: formState.email
+    },
+    onError(err) {
+      console.log(err);
+      console.log('Cant mutate,error occured!');
+      setErrorMsg('Cant mutate,error occured');
+      //Now display this on popup
     }
   });
   //Get the function to perform the mutation, as well as error, if it occured during mutation
 
-  if (error)
-    return (
-      <div className='popup-container'>
-        <div className='popup-content'>
-          'Error Occured!Try Again'
-          <div
-            className='close-btn'
-            onClick={() => props.openPopup(false)}
-          ></div>
-        </div>
-      </div>
-    );
+  // if (error) {
+  //   console.log('Mutation error');
+
+  // }
 
   return props.active ? ( //props.active check tells us whether we should render our Popup or not.
     <div className='popup-container'>
       {/*This is a container with absolute positioning, and it has its background transparency lowered
         so that it looks like the popup is the only active window.*/}
       <div className='popup-content'>
-        <div className='close-btn' onClick={() => props.openPopup(false)}></div>
+        <div
+          className='close-btn'
+          onClick={() => {
+            setErrorMsg('');
+            setFormState({
+              msg: '',
+              email: ''
+            });
+            props.openPopup(false);
+          }}
+        ></div>
         <div className='contact-heading'>Contact</div>
         <p>Lorem Ipsum is simply dummy text of the printing</p>
         <form
-          onSubmit={e => {
+          onSubmit={async e => {
             e.preventDefault();
             //Include a validate function here, to verify the form data
             let valid = ValidateInput(formState.msg, formState.email);
             if (valid) {
               setDataValid(true);
-              sendMessage();
-              setFormState({
-                msg: '',
-                email: ''
-              });
-              console.log('Data is sent to server');
-              props.openPopup(false);
+              setErrorMsg('');
+
+              await sendMessage();
+              console.log('error message :' + errorMsg);
+              if (errorMsg === '') {
+                console.log('Data is sent to server');
+                //console.log(errorMsg);
+                props.openPopup(false);
+                //console.log(errorMsg);
+              }
+
               //Call the mutation to send data
             } else {
               //Display some error
               setDataValid(false);
+              setErrorMsg('Invalid form data');
               console.log('Data not sent');
             }
           }}
@@ -110,7 +125,7 @@ function Popup(props) {
           ></input>
         </form>
         <br />
-        {!dataValid && (
+        {(!dataValid || errorMsg) && (
           <>
             <span
               style={{
@@ -120,10 +135,11 @@ function Popup(props) {
                 top: '20px'
               }}
             >
-              Invalid form data
+              {errorMsg}
             </span>
           </>
         )}
+        {/* Above block is to display error messages, if any exist or if data is invalid*/}
         <br />
         <span
           style={{

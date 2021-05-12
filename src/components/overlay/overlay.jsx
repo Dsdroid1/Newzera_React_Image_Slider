@@ -16,13 +16,13 @@ function Overlay() {
     <React.Fragment>
       <ul className='navbar'>
         <li>
-          <a href=''>About</a>
+          <a href='/'>About</a>
         </li>
         <li>
-          <a href=''>Blog</a>
+          <a href='/'>Blog</a>
         </li>
         <li>
-          <a href=''>Careers</a>
+          <a href='/'>Careers</a>
         </li>
         <li className='nav-pop' onClick={() => setPopupon(true)}>
           Contact

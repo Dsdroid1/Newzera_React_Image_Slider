@@ -13,8 +13,8 @@ function Left() {
   //Rest all is simple element rendering
 
   const { loading, error, data } = useQuery(TEXT_QUERY);
-  if (loading) return 'loading...';
-  if (error) return 'Error!';
+  //if (loading) return 'loading...';
+  //if (error) return 'Error!';
   //console.log(data);
   return (
     <React.Fragment>
@@ -24,6 +24,8 @@ function Left() {
           {/* Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. */}
           {data && <>{data.getData}</>}
+          {error && <>Data not found</>}
+          {loading && <>Data is loading...</>}
           {/* If data is available, i.e. fetched from the query, then display it here*/}
         </div>
         <div className='left-content'>
