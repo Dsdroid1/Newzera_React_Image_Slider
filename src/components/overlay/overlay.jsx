@@ -49,7 +49,7 @@ function Overlay() {
         </a>
       </div>
 
-      <Popup active={popupOn} closePopup={setPopupon} />
+      <Popup active={popupOn} openPopup={setPopupon} />
     </React.Fragment>
   );
 }

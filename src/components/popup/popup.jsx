@@ -18,6 +18,8 @@ function Popup(props) {
   });
   //To keep track of the values in the form, we use the useState hook.
 
+  const [dataValid, setDataValid] = useState(true);
+
   const [sendMessage, { error }] = useMutation(SEND_MESSAGE_MUTATION, {
     variables: {
       msg: formState.msg,
@@ -33,7 +35,7 @@ function Popup(props) {
           'Error Occured!Try Again'
           <div
             className='close-btn'
-            onClick={() => props.closePopup(false)}
+            onClick={() => props.openPopup(false)}
           ></div>
         </div>
       </div>
@@ -44,19 +46,29 @@ function Popup(props) {
       {/*This is a container with absolute positioning, and it has its background transparency lowered
         so that it looks like the popup is the only active window.*/}
       <div className='popup-content'>
-        <div
-          className='close-btn'
-          onClick={() => props.closePopup(false)}
-        ></div>
+        <div className='close-btn' onClick={() => props.openPopup(false)}></div>
         <div className='contact-heading'>Contact</div>
         <p>Lorem Ipsum is simply dummy text of the printing</p>
         <form
           onSubmit={e => {
             e.preventDefault();
             //Include a validate function here, to verify the form data
-            sendMessage();
-            //Call the mutation to send data
-            props.closePopup(false);
+            let valid = ValidateInput(formState.msg, formState.email);
+            if (valid) {
+              setDataValid(true);
+              sendMessage();
+              setFormState({
+                msg: '',
+                email: ''
+              });
+              console.log('Data is sent to server');
+              props.openPopup(false);
+              //Call the mutation to send data
+            } else {
+              //Display some error
+              setDataValid(false);
+              console.log('Data not sent');
+            }
           }}
         >
           <div className='form-field'>
@@ -98,6 +110,20 @@ function Popup(props) {
           ></input>
         </form>
         <br />
+        {!dataValid && (
+          <>
+            <span
+              style={{
+                color: 'red',
+                fontSize: '12px',
+                position: 'relative',
+                top: '20px'
+              }}
+            >
+              Invalid form data
+            </span>
+          </>
+        )}
         <br />
         <span
           style={{
@@ -107,7 +133,7 @@ function Popup(props) {
             top: '15px'
           }}
         >
-          Need more info? hello@newzera.com
+          Need more info? hello@newzera.com{/* Can be link(anchor tag) */}
         </span>
         <a href='https://twitter.com/?lang=en'>
           <div className='twitter icons'></div>
@@ -124,5 +150,14 @@ function Popup(props) {
     ''
   );
 }
+
+const ValidateInput = (msg, email) => {
+  if (msg === '' || email === '') {
+    //Any blank field
+    return false;
+  }
+  //Do email syntax check here
+  return true;
+};
 
 export default Popup;
